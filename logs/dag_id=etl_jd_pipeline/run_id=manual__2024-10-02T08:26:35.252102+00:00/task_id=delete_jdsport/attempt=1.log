@@ -1,0 +1,16 @@
+[2024-10-02T08:26:56.085+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.delete_jdsport manual__2024-10-02T08:26:35.252102+00:00 [queued]>
+[2024-10-02T08:26:56.096+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.delete_jdsport manual__2024-10-02T08:26:35.252102+00:00 [queued]>
+[2024-10-02T08:26:56.096+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-10-02T08:26:56.116+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): delete_jdsport> on 2024-10-02 08:26:35.252102+00:00
+[2024-10-02T08:26:56.123+0000] {standard_task_runner.py:57} INFO - Started process 69 to run task
+[2024-10-02T08:26:56.129+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'delete_jdsport', 'manual__2024-10-02T08:26:35.252102+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmpf5ffk07m']
+[2024-10-02T08:26:56.133+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask delete_jdsport
+[2024-10-02T08:26:56.217+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.delete_jdsport manual__2024-10-02T08:26:35.252102+00:00 [running]> on host addf1b8c90fb
+[2024-10-02T08:26:56.362+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='delete_jdsport' AIRFLOW_CTX_EXECUTION_DATE='2024-10-02T08:26:35.252102+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-02T08:26:35.252102+00:00'
+[2024-10-02T08:26:56.364+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-02T08:26:56.365+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/fastfashion && rm -rf jdsportraw.csv']
+[2024-10-02T08:26:56.385+0000] {subprocess.py:86} INFO - Output:
+[2024-10-02T08:26:56.392+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-02T08:26:56.441+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=etl_jd_pipeline, task_id=delete_jdsport, execution_date=20241002T082635, start_date=20241002T082656, end_date=20241002T082656
+[2024-10-02T08:26:56.501+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-10-02T08:26:56.538+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

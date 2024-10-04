@@ -1,0 +1,37 @@
+[2024-09-27T14:22:37.617+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_pandas manual__2024-09-27T14:22:35.329983+00:00 [queued]>
+[2024-09-27T14:22:37.637+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_pandas manual__2024-09-27T14:22:35.329983+00:00 [queued]>
+[2024-09-27T14:22:37.638+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-27T14:22:37.683+0000] {taskinstance.py:1380} INFO - Executing <Task(PythonOperator): jdsport_pandas> on 2024-09-27 14:22:35.329983+00:00
+[2024-09-27T14:22:37.698+0000] {standard_task_runner.py:57} INFO - Started process 121 to run task
+[2024-09-27T14:22:37.703+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'jdsport_pandas', 'manual__2024-09-27T14:22:35.329983+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmpdks6dsvz']
+[2024-09-27T14:22:37.707+0000] {standard_task_runner.py:85} INFO - Job 19: Subtask jdsport_pandas
+[2024-09-27T14:22:37.810+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.jdsport_pandas manual__2024-09-27T14:22:35.329983+00:00 [running]> on host e8e1afcccdee
+[2024-09-27T14:22:38.037+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='jdsport_pandas' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T14:22:35.329983+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T14:22:35.329983+00:00'
+[2024-09-27T14:22:38.081+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/pipelines/jdsports_pipeline.py", line 6, in jdsports_pipeline
+    df = use_pandas('/opt/airflow/fastfashion/jdsportraw.csv')
+  File "/opt/airflow/etls/jdsports_etl.py", line 8, in use_pandas
+    df['price'] = df['price'].apply(lambda x : float(x[1:]))
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/series.py", line 4758, in apply
+    return SeriesApply(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/apply.py", line 1201, in apply
+    return self.apply_standard()
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/apply.py", line 1281, in apply_standard
+    mapped = obj._map_values(
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/base.py", line 921, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action, convert=convert)
+  File "/home/airflow/.local/lib/python3.9/site-packages/pandas/core/algorithms.py", line 1812, in map_array
+    return lib.map_infer(values, mapper, convert=convert)
+  File "lib.pyx", line 2917, in pandas._libs.lib.map_infer
+  File "/opt/airflow/etls/jdsports_etl.py", line 8, in <lambda>
+    df['price'] = df['price'].apply(lambda x : float(x[1:]))
+ValueError: could not convert string to float: 'educed to clear'
+[2024-09-27T14:22:38.107+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=etl_jd_pipeline, task_id=jdsport_pandas, execution_date=20240927T142235, start_date=20240927T142237, end_date=20240927T142238
+[2024-09-27T14:22:38.135+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 19 for task jdsport_pandas (could not convert string to float: 'educed to clear'; 121)
+[2024-09-27T14:22:38.175+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-27T14:22:38.247+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

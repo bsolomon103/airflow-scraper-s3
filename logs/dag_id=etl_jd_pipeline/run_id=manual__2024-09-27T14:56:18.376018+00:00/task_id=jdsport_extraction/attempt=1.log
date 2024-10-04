@@ -1,0 +1,62 @@
+[2024-09-27T14:56:20.210+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T14:56:18.376018+00:00 [queued]>
+[2024-09-27T14:56:20.225+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T14:56:18.376018+00:00 [queued]>
+[2024-09-27T14:56:20.226+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-27T14:56:20.244+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): jdsport_extraction> on 2024-09-27 14:56:18.376018+00:00
+[2024-09-27T14:56:20.252+0000] {standard_task_runner.py:57} INFO - Started process 106 to run task
+[2024-09-27T14:56:20.258+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'jdsport_extraction', 'manual__2024-09-27T14:56:18.376018+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmprdgqztlf']
+[2024-09-27T14:56:20.262+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask jdsport_extraction
+[2024-09-27T14:56:20.341+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T14:56:18.376018+00:00 [running]> on host 2e79752036ec
+[2024-09-27T14:56:20.472+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='jdsport_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T14:56:18.376018+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T14:56:18.376018+00:00'
+[2024-09-27T14:56:20.475+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-27T14:56:20.475+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/fastfashion && scrapy crawl fast_fashion -o jdsportraw.csv']
+[2024-09-27T14:56:20.498+0000] {subprocess.py:86} INFO - Output:
+[2024-09-27T14:56:22.089+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: fastfashion)
+[2024-09-27T14:56:22.094+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.9.18 (main, Sep  7 2023, 13:38:29) - [GCC 10.2.1 20210110], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Linux-6.1.109-118.189.amzn2023.x86_64-x86_64-with-glibc2.31
+[2024-09-27T14:56:22.099+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [scrapy.addons] INFO: Enabled addons:
+[2024-09-27T14:56:22.099+0000] {subprocess.py:93} INFO - []
+[2024-09-27T14:56:22.100+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [asyncio] DEBUG: Using selector: EpollSelector
+[2024-09-27T14:56:22.100+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+[2024-09-27T14:56:22.101+0000] {subprocess.py:93} INFO - Unhandled error in Deferred:
+[2024-09-27T14:56:22.101+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [twisted] CRITICAL: Unhandled error in Deferred:
+[2024-09-27T14:56:22.102+0000] {subprocess.py:93} INFO - 
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 265, in crawl
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -     return self._crawl(crawler, *args, **kwargs)
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 269, in _crawl
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -     d = crawler.crawl(*args, **kwargs)
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/defer.py", line 2287, in unwindGenerator
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -     return _cancellableInlineCallbacks(gen)
+[2024-09-27T14:56:22.103+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/defer.py", line 2197, in _cancellableInlineCallbacks
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -     _inlineCallbacks(None, gen, status, _copy_context())
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO - --- <exception caught here> ---
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/defer.py", line 2014, in _inlineCallbacks
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -     result = context.run(gen.send, result)
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 156, in crawl
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -     self._apply_settings()
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 130, in _apply_settings
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -     verify_installed_reactor(reactor_class)
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/utils/reactor.py", line 163, in verify_installed_reactor
+[2024-09-27T14:56:22.104+0000] {subprocess.py:93} INFO -     raise Exception(msg)
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO - builtins.Exception: The installed reactor (twisted.internet.epollreactor.EPollReactor) does not match the requested one (twisted.internet.asyncioreactor.AsyncioSelectorReactor)
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO - 
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO - 2024-09-27 14:56:22 [twisted] CRITICAL:
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/defer.py", line 2014, in _inlineCallbacks
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO -     result = context.run(gen.send, result)
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 156, in crawl
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO -     self._apply_settings()
+[2024-09-27T14:56:22.105+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 130, in _apply_settings
+[2024-09-27T14:56:22.106+0000] {subprocess.py:93} INFO -     verify_installed_reactor(reactor_class)
+[2024-09-27T14:56:22.106+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/utils/reactor.py", line 163, in verify_installed_reactor
+[2024-09-27T14:56:22.106+0000] {subprocess.py:93} INFO -     raise Exception(msg)
+[2024-09-27T14:56:22.106+0000] {subprocess.py:93} INFO - Exception: The installed reactor (twisted.internet.epollreactor.EPollReactor) does not match the requested one (twisted.internet.asyncioreactor.AsyncioSelectorReactor)
+[2024-09-27T14:56:22.247+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-27T14:56:22.268+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-27T14:56:22.273+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=etl_jd_pipeline, task_id=jdsport_extraction, execution_date=20240927T145618, start_date=20240927T145620, end_date=20240927T145622
+[2024-09-27T14:56:22.291+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task jdsport_extraction (Bash command failed. The command returned a non-zero exit code 1.; 106)
+[2024-09-27T14:56:22.319+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-27T14:56:22.367+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

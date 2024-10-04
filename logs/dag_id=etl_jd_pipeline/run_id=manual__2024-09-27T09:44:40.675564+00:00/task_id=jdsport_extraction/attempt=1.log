@@ -1,0 +1,51 @@
+[2024-09-27T09:44:42.280+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T09:44:40.675564+00:00 [queued]>
+[2024-09-27T09:44:42.300+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T09:44:40.675564+00:00 [queued]>
+[2024-09-27T09:44:42.300+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-09-27T09:44:42.320+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): jdsport_extraction> on 2024-09-27 09:44:40.675564+00:00
+[2024-09-27T09:44:42.326+0000] {standard_task_runner.py:57} INFO - Started process 46 to run task
+[2024-09-27T09:44:42.330+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'jdsport_extraction', 'manual__2024-09-27T09:44:40.675564+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmpeyn14hwz']
+[2024-09-27T09:44:42.331+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask jdsport_extraction
+[2024-09-27T09:44:42.405+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.jdsport_extraction manual__2024-09-27T09:44:40.675564+00:00 [running]> on host 82b336010306
+[2024-09-27T09:44:42.519+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='jdsport_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-09-27T09:44:40.675564+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-27T09:44:40.675564+00:00'
+[2024-09-27T09:44:42.521+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-09-27T09:44:42.522+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/fastfashion && scrapy crawl fastfashion']
+[2024-09-27T09:44:42.536+0000] {subprocess.py:86} INFO - Output:
+[2024-09-27T09:44:44.688+0000] {subprocess.py:93} INFO - 2024-09-27 09:44:44 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: fastfashion)
+[2024-09-27T09:44:44.697+0000] {subprocess.py:93} INFO - 2024-09-27 09:44:44 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.9.18 (main, Sep  7 2023, 13:38:29) - [GCC 10.2.1 20210110], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Linux-6.1.109-118.189.amzn2023.x86_64-x86_64-with-glibc2.31
+[2024-09-27T09:44:44.697+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-09-27T09:44:44.698+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/spiderloader.py", line 87, in load
+[2024-09-27T09:44:44.699+0000] {subprocess.py:93} INFO -     return self._spiders[spider_name]
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO - KeyError: 'fastfashion'
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO - 
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO - 
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-09-27T09:44:44.700+0000] {subprocess.py:93} INFO -   File "/home/***/.local/bin/scrapy", line 8, in <module>
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -     sys.exit(execute())
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/cmdline.py", line 161, in execute
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -     _run_print_help(parser, _run_command, cmd, args, opts)
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/cmdline.py", line 114, in _run_print_help
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -     func(*a, **kw)
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/cmdline.py", line 169, in _run_command
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -     cmd.run(args, opts)
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/commands/crawl.py", line 23, in run
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -     crawl_defer = self.crawler_process.crawl(spname, **opts.spargs)
+[2024-09-27T09:44:44.701+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 264, in crawl
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -     crawler = self.create_crawler(crawler_or_spidercls)
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 300, in create_crawler
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -     return self._create_crawler(crawler_or_spidercls)
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/crawler.py", line 385, in _create_crawler
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -     spidercls = self.spider_loader.load(spidercls)
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/spiderloader.py", line 89, in load
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO -     raise KeyError(f"Spider not found: {spider_name}")
+[2024-09-27T09:44:44.702+0000] {subprocess.py:93} INFO - KeyError: 'Spider not found: fastfashion'
+[2024-09-27T09:44:44.868+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-09-27T09:44:44.887+0000] {taskinstance.py:1935} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-09-27T09:44:44.895+0000] {taskinstance.py:1398} INFO - Marking task as FAILED. dag_id=etl_jd_pipeline, task_id=jdsport_extraction, execution_date=20240927T094440, start_date=20240927T094442, end_date=20240927T094444
+[2024-09-27T09:44:44.914+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 2 for task jdsport_extraction (Bash command failed. The command returned a non-zero exit code 1.; 46)
+[2024-09-27T09:44:44.957+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2024-09-27T09:44:44.984+0000] {taskinstance.py:2776} INFO - 0 downstream tasks scheduled from follow-on schedule check

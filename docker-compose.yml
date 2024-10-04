@@ -1,0 +1,107 @@
+x-airflow-common: &airflow-common
+    build:
+        context: .
+        dockerfile: Dockerfile
+    env_file:
+        - airflow.env
+    volumes:
+        - ./dags:/opt/airflow/dags
+        - ./jobs:/opt/airflow/jobs
+        - ./logs:/opt/airflow/logs
+        - ./etls:/opt/airflow/etls
+        - ./pipelines:/opt/airflow/pipelines
+        - ./utils:/opt/airflow/utils
+        - ./fastfashion:/opt/airflow/fastfashion
+        - ./data:/opt/airflow/data
+        - ./requirements.txt:/opt/airflow/requirements.txt
+        - ./config:/opt/airflow/config
+    depends_on:
+        - postgres
+        - redis
+    networks:
+        - rich-daddy
+        
+
+x-spark-common: &spark-common
+    image: bitnami/spark:latest
+    environment:
+        SPARK_MODE: worker
+        SPARK_WORKER_CORES: 2
+        SPARK_WORKER_MEMORY: 1g
+        SPARK_MASTER_URL: spark://spark-master:7077
+        SPARK_HOME: /opt/bitnami/spark
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    volumes:
+     - ./jobs:/opt/bitnami/spark/jobs
+    networks:
+        - rich-daddy
+    depends_on:
+        - spark-master
+        
+
+services:
+    airflow-webserver:
+        <<: *airflow-common
+        command: airflow webserver
+        depends_on:
+            - airflow-init 
+        ports:
+            - "8080:8080"
+    
+    airflow-init:
+        <<: *airflow-common
+        command: bash -c "airflow db init && airflow db upgrade && airflow users create --username rich-daddy --firstname Biokpor --lastname Solomon --email biokporsolomon@yahoo.co.uk --role Admin --password admin"
+        restart: "no"
+    
+    airflow-scheduler:
+        <<: *airflow-common
+        command: airflow scheduler
+    
+    airflow-worker:
+        <<: *airflow-common
+        command: celery worker
+        
+    
+    spark-master:
+        image: bitnami/spark:latest
+        volumes:
+            - ./jobs:/opt/bitnami/spark/jobs
+        networks:
+            - rich-daddy
+        command: bin/spark-class org.apache.spark.deploy.master.Master
+        ports:
+            - "7077:7077"
+            - "9090:9090"
+            
+    
+    spark-worker:
+        <<: *spark-common
+        
+    
+    postgres:
+        image: postgres:14.0
+        environment:
+            POSTGRES_USER: airflow
+            POSTGRES_DB: airflow
+            POSTGRES_PASSWORD: airflow
+            POSTGRES_PORT: 5432
+            
+        ports:
+            - "5432:5432"
+            
+        networks:
+            - rich-daddy
+    
+    redis:
+        image:
+            redis:latest
+        ports:
+            - "6379:6379"
+        networks:
+            - rich-daddy
+            
+
+networks: 
+    rich-daddy:
+        
+    

@@ -1,0 +1,279 @@
+[2024-10-01T16:17:40.240+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction scheduled__2024-09-30T00:00:00+00:00 [queued]>
+[2024-10-01T16:17:40.260+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.jdsport_extraction scheduled__2024-09-30T00:00:00+00:00 [queued]>
+[2024-10-01T16:17:40.261+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-10-01T16:17:40.292+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): jdsport_extraction> on 2024-09-30 00:00:00+00:00
+[2024-10-01T16:17:40.301+0000] {standard_task_runner.py:57} INFO - Started process 48 to run task
+[2024-10-01T16:17:40.307+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'jdsport_extraction', 'scheduled__2024-09-30T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmpz68kgebg']
+[2024-10-01T16:17:40.312+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask jdsport_extraction
+[2024-10-01T16:17:40.421+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.jdsport_extraction scheduled__2024-09-30T00:00:00+00:00 [running]> on host 314a4fe6acac
+[2024-10-01T16:17:40.558+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='jdsport_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-09-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-30T00:00:00+00:00'
+[2024-10-01T16:17:40.561+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-01T16:17:40.562+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/fastfashion && scrapy crawl jdsport -o jdsportraw.csv']
+[2024-10-01T16:17:40.584+0000] {subprocess.py:86} INFO - Output:
+[2024-10-01T16:17:43.174+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: fastfashion)
+[2024-10-01T16:17:43.192+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.9.18 (main, Sep  7 2023, 13:38:29) - [GCC 10.2.1 20210110], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Linux-6.1.109-118.189.amzn2023.x86_64-x86_64-with-glibc2.31
+[2024-10-01T16:17:43.198+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.addons] INFO: Enabled addons:
+[2024-10-01T16:17:43.198+0000] {subprocess.py:93} INFO - []
+[2024-10-01T16:17:43.198+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+[2024-10-01T16:17:43.240+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.extensions.telnet] INFO: Telnet Password: ff79594a5808733e
+[2024-10-01T16:17:43.699+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.middleware] INFO: Enabled extensions:
+[2024-10-01T16:17:43.700+0000] {subprocess.py:93} INFO - ['scrapy.extensions.corestats.CoreStats',
+[2024-10-01T16:17:43.701+0000] {subprocess.py:93} INFO -  'scrapy.extensions.telnet.TelnetConsole',
+[2024-10-01T16:17:43.701+0000] {subprocess.py:93} INFO -  'scrapy.extensions.memusage.MemoryUsage',
+[2024-10-01T16:17:43.701+0000] {subprocess.py:93} INFO -  'scrapy.extensions.feedexport.FeedExporter',
+[2024-10-01T16:17:43.701+0000] {subprocess.py:93} INFO -  'scrapy.extensions.logstats.LogStats']
+[2024-10-01T16:17:43.703+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.crawler] INFO: Overridden settings:
+[2024-10-01T16:17:43.703+0000] {subprocess.py:93} INFO - {'BOT_NAME': 'fastfashion',
+[2024-10-01T16:17:43.703+0000] {subprocess.py:93} INFO -  'FEED_EXPORT_ENCODING': 'utf-8',
+[2024-10-01T16:17:43.704+0000] {subprocess.py:93} INFO -  'NEWSPIDER_MODULE': 'fastfashion.spiders',
+[2024-10-01T16:17:43.704+0000] {subprocess.py:93} INFO -  'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+[2024-10-01T16:17:43.704+0000] {subprocess.py:93} INFO -  'ROBOTSTXT_OBEY': True,
+[2024-10-01T16:17:43.704+0000] {subprocess.py:93} INFO -  'SPIDER_MODULES': ['fastfashion.spiders']}
+[2024-10-01T16:17:43.863+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2024-10-01T16:17:43.863+0000] {subprocess.py:93} INFO - ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+[2024-10-01T16:17:43.864+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+[2024-10-01T16:17:43.864+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2024-10-01T16:17:43.864+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2024-10-01T16:17:43.865+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2024-10-01T16:17:43.866+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2024-10-01T16:17:43.866+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2024-10-01T16:17:43.866+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2024-10-01T16:17:43.868+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2024-10-01T16:17:43.869+0000] {subprocess.py:93} INFO - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.middleware] INFO: Enabled item pipelines:
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO - []
+[2024-10-01T16:17:43.870+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.core.engine] INFO: Spider opened
+[2024-10-01T16:17:43.884+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2024-10-01T16:17:43.897+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:43 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TelnetConsole.start_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7f856dd7d6a0>>
+[2024-10-01T16:17:43.898+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-10-01T16:17:43.899+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/utils/defer.py", line 348, in maybeDeferred_coro
+[2024-10-01T16:17:43.900+0000] {subprocess.py:93} INFO -     result = f(*args, **kw)
+[2024-10-01T16:17:43.900+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -     return receiver(*arguments, **named)
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/extensions/telnet.py", line 68, in start_listening
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -     self.port = listen_tcp(self.portrange, self.host, self)
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/utils/reactor.py", line 29, in listen_tcp
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -     return reactor.listenTCP(x, factory, interface=host)
+[2024-10-01T16:17:43.901+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/posixbase.py", line 363, in listenTCP
+[2024-10-01T16:17:43.902+0000] {subprocess.py:93} INFO -     p.startListening()
+[2024-10-01T16:17:43.902+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/twisted/internet/tcp.py", line 1349, in startListening
+[2024-10-01T16:17:43.902+0000] {subprocess.py:93} INFO -     skt.listen(self.backlog)
+[2024-10-01T16:17:43.902+0000] {subprocess.py:93} INFO - OSError: [Errno 98] Address already in use
+[2024-10-01T16:17:44.263+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.jdsports.co.uk/robots.txt> (referer: None)
+[2024-10-01T16:17:44.311+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.jdsports.co.uk/men/mens-footwear/> (referer: None)
+[2024-10-01T16:17:44.320+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.jdsports.co.uk/women/womens-footwear/> (referer: None)
+[2024-10-01T16:17:44.524+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.jdsports.co.uk/product/grey-nike-air-max-95/19645973/> (referer: https://www.jdsports.co.uk/men/mens-footwear/)
+[2024-10-01T16:17:44.539+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.jdsports.co.uk/product/blue-adidas-originals-gazelle-indoor-womens/17711989/> (referer: https://www.jdsports.co.uk/women/womens-footwear/)
+[2024-10-01T16:17:44.682+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.jdsports.co.uk/product/grey-nike-air-max-95/19645973/>
+[2024-10-01T16:17:44.683+0000] {subprocess.py:93} INFO - {'brand': 'Nike',
+[2024-10-01T16:17:44.683+0000] {subprocess.py:93} INFO -  'category': 'Footwear',
+[2024-10-01T16:17:44.683+0000] {subprocess.py:93} INFO -  'gender': 'Mens Footwear',
+[2024-10-01T16:17:44.683+0000] {subprocess.py:93} INFO -  'images': ['https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.684+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.684+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.684+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.684+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.685+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.685+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.685+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.686+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.686+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.686+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.686+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.686+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.687+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.688+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.689+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.689+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.689+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.690+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.690+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.690+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.690+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.690+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.691+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.692+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.692+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.692+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.692+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.692+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.693+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.693+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.693+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.693+0000] {subprocess.py:93} INFO -             '3x'],
+[2024-10-01T16:17:44.693+0000] {subprocess.py:93} INFO -  'name': 'Nike Air Max 95',
+[2024-10-01T16:17:44.694+0000] {subprocess.py:93} INFO -  'price': '£175.00',
+[2024-10-01T16:17:44.694+0000] {subprocess.py:93} INFO -  'retailer': 'JD Sport',
+[2024-10-01T16:17:44.694+0000] {subprocess.py:93} INFO -  'url': 'https://www.jdsports.co.uk/product/grey-nike-air-max-95/19645973/'}
+[2024-10-01T16:17:44.711+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.jdsports.co.uk/product/blue-adidas-originals-gazelle-indoor-womens/17711989/>
+[2024-10-01T16:17:44.711+0000] {subprocess.py:93} INFO - {'brand': 'adidas',
+[2024-10-01T16:17:44.711+0000] {subprocess.py:93} INFO -  'category': 'Footwear',
+[2024-10-01T16:17:44.711+0000] {subprocess.py:93} INFO -  'gender': 'Womens Footwear',
+[2024-10-01T16:17:44.712+0000] {subprocess.py:93} INFO -  'images': ['https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.712+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.712+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.712+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.713+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.713+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.713+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_a?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.713+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.713+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.714+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.714+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.714+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.714+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.714+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.715+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_b?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.715+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.715+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.716+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_c?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.717+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.717+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.717+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.717+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.717+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.718+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.718+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.718+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_d?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.718+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.718+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.719+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.719+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.719+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_e?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.720+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_707948_f?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.721+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_a?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_a?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.722+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_a?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_b?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_b?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.723+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.724+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_b?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.724+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.724+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_c?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.724+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.725+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.725+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_c?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.725+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.725+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_c?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_d?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.726+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_d?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.727+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.727+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.727+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_d?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.727+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.728+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_e?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.728+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.728+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.728+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_e?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.728+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.729+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.729+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_e?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.729+0000] {subprocess.py:93} INFO -             '3x',
+[2024-10-01T16:17:44.729+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_f?qlt=92&w=750&h=531&v=1&fmt=auto '
+[2024-10-01T16:17:44.730+0000] {subprocess.py:93} INFO -             '1x,\n'
+[2024-10-01T16:17:44.730+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.730+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_f?qlt=92&w=950&h=673&v=1&fmt=auto '
+[2024-10-01T16:17:44.730+0000] {subprocess.py:93} INFO -             '2x,\n'
+[2024-10-01T16:17:44.730+0000] {subprocess.py:93} INFO -             '                '
+[2024-10-01T16:17:44.731+0000] {subprocess.py:93} INFO -             'https://i8.amplience.net/i/jpl/jd_618705_f?qlt=92&w=1200&h=850&v=1&fmt=auto '
+[2024-10-01T16:17:44.731+0000] {subprocess.py:93} INFO -             '3x'],
+[2024-10-01T16:17:44.731+0000] {subprocess.py:93} INFO -  'name': "adidas Originals Gazelle Indoor Women's",
+[2024-10-01T16:17:44.732+0000] {subprocess.py:93} INFO -  'price': '£95.00',
+[2024-10-01T16:17:44.732+0000] {subprocess.py:93} INFO -  'retailer': 'JD Sport',
+[2024-10-01T16:17:44.732+0000] {subprocess.py:93} INFO -  'url': 'https://www.jdsports.co.uk/product/blue-adidas-originals-gazelle-indoor-womens/17711989/'}
+[2024-10-01T16:17:44.732+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] INFO: Closing spider (finished)
+[2024-10-01T16:17:44.733+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.extensions.feedexport] INFO: Stored csv feed (2 items) in: jdsportraw.csv
+[2024-10-01T16:17:44.733+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+[2024-10-01T16:17:44.733+0000] {subprocess.py:93} INFO - {'downloader/request_bytes': 1684,
+[2024-10-01T16:17:44.733+0000] {subprocess.py:93} INFO -  'downloader/request_count': 5,
+[2024-10-01T16:17:44.733+0000] {subprocess.py:93} INFO -  'downloader/request_method_count/GET': 5,
+[2024-10-01T16:17:44.734+0000] {subprocess.py:93} INFO -  'downloader/response_bytes': 198528,
+[2024-10-01T16:17:44.734+0000] {subprocess.py:93} INFO -  'downloader/response_count': 5,
+[2024-10-01T16:17:44.734+0000] {subprocess.py:93} INFO -  'downloader/response_status_count/200': 5,
+[2024-10-01T16:17:44.734+0000] {subprocess.py:93} INFO -  'elapsed_time_seconds': 0.831986,
+[2024-10-01T16:17:44.735+0000] {subprocess.py:93} INFO -  'feedexport/success_count/FileFeedStorage': 1,
+[2024-10-01T16:17:44.735+0000] {subprocess.py:93} INFO -  'finish_reason': 'finished',
+[2024-10-01T16:17:44.735+0000] {subprocess.py:93} INFO -  'finish_time': datetime.datetime(2024, 10, 1, 16, 17, 44, 715531, tzinfo=datetime.timezone.utc),
+[2024-10-01T16:17:44.735+0000] {subprocess.py:93} INFO -  'httpcompression/response_bytes': 1523742,
+[2024-10-01T16:17:44.735+0000] {subprocess.py:93} INFO -  'httpcompression/response_count': 5,
+[2024-10-01T16:17:44.736+0000] {subprocess.py:93} INFO -  'item_scraped_count': 2,
+[2024-10-01T16:17:44.736+0000] {subprocess.py:93} INFO -  'log_count/DEBUG': 8,
+[2024-10-01T16:17:44.736+0000] {subprocess.py:93} INFO -  'log_count/ERROR': 1,
+[2024-10-01T16:17:44.736+0000] {subprocess.py:93} INFO -  'log_count/INFO': 10,
+[2024-10-01T16:17:44.736+0000] {subprocess.py:93} INFO -  'memusage/max': 225161216,
+[2024-10-01T16:17:44.737+0000] {subprocess.py:93} INFO -  'memusage/startup': 225161216,
+[2024-10-01T16:17:44.737+0000] {subprocess.py:93} INFO -  'request_depth_max': 1,
+[2024-10-01T16:17:44.737+0000] {subprocess.py:93} INFO -  'response_received_count': 5,
+[2024-10-01T16:17:44.737+0000] {subprocess.py:93} INFO -  'robotstxt/request_count': 1,
+[2024-10-01T16:17:44.738+0000] {subprocess.py:93} INFO -  'robotstxt/response_count': 1,
+[2024-10-01T16:17:44.738+0000] {subprocess.py:93} INFO -  'robotstxt/response_status_count/200': 1,
+[2024-10-01T16:17:44.738+0000] {subprocess.py:93} INFO -  'scheduler/dequeued': 4,
+[2024-10-01T16:17:44.738+0000] {subprocess.py:93} INFO -  'scheduler/dequeued/memory': 4,
+[2024-10-01T16:17:44.739+0000] {subprocess.py:93} INFO -  'scheduler/enqueued': 4,
+[2024-10-01T16:17:44.739+0000] {subprocess.py:93} INFO -  'scheduler/enqueued/memory': 4,
+[2024-10-01T16:17:44.739+0000] {subprocess.py:93} INFO -  'start_time': datetime.datetime(2024, 10, 1, 16, 17, 43, 883545, tzinfo=datetime.timezone.utc)}
+[2024-10-01T16:17:44.739+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.core.engine] INFO: Spider closed (finished)
+[2024-10-01T16:17:44.740+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:44 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method TelnetConsole.stop_listening of <scrapy.extensions.telnet.TelnetConsole object at 0x7f856dd7d6a0>>
+[2024-10-01T16:17:44.740+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-10-01T16:17:44.740+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/utils/defer.py", line 348, in maybeDeferred_coro
+[2024-10-01T16:17:44.740+0000] {subprocess.py:93} INFO -     result = f(*args, **kw)
+[2024-10-01T16:17:44.741+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/pydispatch/robustapply.py", line 55, in robustApply
+[2024-10-01T16:17:44.741+0000] {subprocess.py:93} INFO -     return receiver(*arguments, **named)
+[2024-10-01T16:17:44.741+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.9/site-packages/scrapy/extensions/telnet.py", line 77, in stop_listening
+[2024-10-01T16:17:44.742+0000] {subprocess.py:93} INFO -     self.port.stopListening()
+[2024-10-01T16:17:44.742+0000] {subprocess.py:93} INFO - AttributeError: 'TelnetConsole' object has no attribute 'port'
+[2024-10-01T16:17:45.026+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-01T16:17:45.076+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=etl_jd_pipeline, task_id=jdsport_extraction, execution_date=20240930T000000, start_date=20241001T161740, end_date=20241001T161745
+[2024-10-01T16:17:45.118+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-10-01T16:17:45.163+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

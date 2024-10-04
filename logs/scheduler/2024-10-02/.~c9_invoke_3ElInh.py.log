@@ -1,0 +1,12 @@
+[2024-10-02T12:31:43.373+0000] {processor.py:157} INFO - Started process (PID=1031) to work on /opt/airflow/dags/.~c9_invoke_3ElInh.py
+[2024-10-02T12:31:43.375+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/.~c9_invoke_3ElInh.py for tasks to queue
+[2024-10-02T12:31:43.381+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.380+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/.~c9_invoke_3ElInh.py
+[2024-10-02T12:31:43.460+0000] {processor.py:839} INFO - DAG(s) dict_keys(['yes_jd_pipeline']) retrieved from /opt/airflow/dags/.~c9_invoke_3ElInh.py
+[2024-10-02T12:31:43.808+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.807+0000] {manager.py:499} INFO - Created Permission View: %s
+[2024-10-02T12:31:43.827+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.827+0000] {manager.py:499} INFO - Created Permission View: %s
+[2024-10-02T12:31:43.839+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.839+0000] {manager.py:499} INFO - Created Permission View: %s
+[2024-10-02T12:31:43.840+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.840+0000] {security.py:708} INFO - Not syncing DAG-level permissions for DAG 'DAG:yes_jd_pipeline' as access control is unset.
+[2024-10-02T12:31:43.841+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.841+0000] {dag.py:2915} INFO - Sync 1 DAGs
+[2024-10-02T12:31:43.862+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.862+0000] {dag.py:2937} INFO - Creating ORM DAG for yes_jd_pipeline
+[2024-10-02T12:31:43.883+0000] {logging_mixin.py:151} INFO - [2024-10-02T12:31:43.883+0000] {dag.py:3696} INFO - Setting next_dagrun for yes_jd_pipeline to 2024-10-01T00:00:00+00:00, run_after=2024-10-02T00:00:00+00:00
+[2024-10-02T12:31:43.913+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/.~c9_invoke_3ElInh.py took 0.547 seconds

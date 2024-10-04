@@ -1,0 +1,165 @@
+[2024-10-01T16:17:53.407+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_jd_pipeline.kickgame_extraction manual__2024-10-01T16:17:35.265186+00:00 [queued]>
+[2024-10-01T16:17:53.421+0000] {taskinstance.py:1157} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_jd_pipeline.kickgame_extraction manual__2024-10-01T16:17:35.265186+00:00 [queued]>
+[2024-10-01T16:17:53.421+0000] {taskinstance.py:1359} INFO - Starting attempt 1 of 1
+[2024-10-01T16:17:53.437+0000] {taskinstance.py:1380} INFO - Executing <Task(BashOperator): kickgame_extraction> on 2024-10-01 16:17:35.265186+00:00
+[2024-10-01T16:17:53.445+0000] {standard_task_runner.py:57} INFO - Started process 77 to run task
+[2024-10-01T16:17:53.451+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_jd_pipeline', 'kickgame_extraction', 'manual__2024-10-01T16:17:35.265186+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/jdsports_dag.py', '--cfg-path', '/tmp/tmpcsp_qqlo']
+[2024-10-01T16:17:53.459+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask kickgame_extraction
+[2024-10-01T16:17:53.571+0000] {task_command.py:415} INFO - Running <TaskInstance: etl_jd_pipeline.kickgame_extraction manual__2024-10-01T16:17:35.265186+00:00 [running]> on host 314a4fe6acac
+[2024-10-01T16:17:53.725+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Biokpor Solomon' AIRFLOW_CTX_DAG_ID='etl_jd_pipeline' AIRFLOW_CTX_TASK_ID='kickgame_extraction' AIRFLOW_CTX_EXECUTION_DATE='2024-10-01T16:17:35.265186+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-01T16:17:35.265186+00:00'
+[2024-10-01T16:17:53.728+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-10-01T16:17:53.728+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'cd /opt/***/fastfashion && scrapy crawl kickgame -o kickgameraw.csv']
+[2024-10-01T16:17:53.745+0000] {subprocess.py:86} INFO - Output:
+[2024-10-01T16:17:55.866+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:55 [scrapy.utils.log] INFO: Scrapy 2.11.2 started (bot: fastfashion)
+[2024-10-01T16:17:55.872+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:55 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.9.1, w3lib 2.2.1, Twisted 24.7.0, Python 3.9.18 (main, Sep  7 2023, 13:38:29) - [GCC 10.2.1 20210110], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Linux-6.1.109-118.189.amzn2023.x86_64-x86_64-with-glibc2.31
+[2024-10-01T16:17:55.878+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:55 [scrapy.addons] INFO: Enabled addons:
+[2024-10-01T16:17:55.878+0000] {subprocess.py:93} INFO - []
+[2024-10-01T16:17:55.879+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:55 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.epollreactor.EPollReactor
+[2024-10-01T16:17:55.901+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:55 [scrapy.extensions.telnet] INFO: Telnet Password: 9265c1e6a38e8f2f
+[2024-10-01T16:17:56.255+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.middleware] INFO: Enabled extensions:
+[2024-10-01T16:17:56.255+0000] {subprocess.py:93} INFO - ['scrapy.extensions.corestats.CoreStats',
+[2024-10-01T16:17:56.255+0000] {subprocess.py:93} INFO -  'scrapy.extensions.telnet.TelnetConsole',
+[2024-10-01T16:17:56.255+0000] {subprocess.py:93} INFO -  'scrapy.extensions.memusage.MemoryUsage',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'scrapy.extensions.feedexport.FeedExporter',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'scrapy.extensions.logstats.LogStats']
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.crawler] INFO: Overridden settings:
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO - {'BOT_NAME': 'fastfashion',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'FEED_EXPORT_ENCODING': 'utf-8',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'NEWSPIDER_MODULE': 'fastfashion.spiders',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'ROBOTSTXT_OBEY': True,
+[2024-10-01T16:17:56.256+0000] {subprocess.py:93} INFO -  'SPIDER_MODULES': ['fastfashion.spiders']}
+[2024-10-01T16:17:56.380+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.middleware] INFO: Enabled downloader middlewares:
+[2024-10-01T16:17:56.380+0000] {subprocess.py:93} INFO - ['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+[2024-10-01T16:17:56.381+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+[2024-10-01T16:17:56.382+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+[2024-10-01T16:17:56.382+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+[2024-10-01T16:17:56.382+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+[2024-10-01T16:17:56.382+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+[2024-10-01T16:17:56.382+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+[2024-10-01T16:17:56.383+0000] {subprocess.py:93} INFO -  'scrapy.downloadermiddlewares.stats.DownloaderStats']
+[2024-10-01T16:17:56.383+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.middleware] INFO: Enabled spider middlewares:
+[2024-10-01T16:17:56.383+0000] {subprocess.py:93} INFO - ['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+[2024-10-01T16:17:56.383+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.referer.RefererMiddleware',
+[2024-10-01T16:17:56.384+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+[2024-10-01T16:17:56.384+0000] {subprocess.py:93} INFO -  'scrapy.spidermiddlewares.depth.DepthMiddleware']
+[2024-10-01T16:17:56.384+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.middleware] INFO: Enabled item pipelines:
+[2024-10-01T16:17:56.384+0000] {subprocess.py:93} INFO - []
+[2024-10-01T16:17:56.385+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.core.engine] INFO: Spider opened
+[2024-10-01T16:17:56.394+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+[2024-10-01T16:17:56.396+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+[2024-10-01T16:17:56.656+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/robots.txt> (referer: None)
+[2024-10-01T16:17:57.709+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=1> (referer: None)
+[2024-10-01T16:17:57.879+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=1>
+[2024-10-01T16:17:57.879+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 4 Retro 'White Thunder'", 'price': '£279.99', 'images': '//www.kickgame.co.uk/cdn/shop/files/FQ8138-001.png?v=1726233383&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-4-retro-white-thunder-fq8138-001'}
+[2024-10-01T16:17:58.884+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=2> (referer: https://www.kickgame.co.uk/collections/sneakers?page=1)
+[2024-10-01T16:17:59.066+0000] {subprocess.py:93} INFO - 2024-10-01 16:17:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=2>
+[2024-10-01T16:17:59.066+0000] {subprocess.py:93} INFO - {'name': "adidas Samba x Pharell Human Race 'Aluminium Glory Red'", 'price': '£280.00', 'images': '//www.kickgame.co.uk/cdn/shop/files/ID9066.png?v=1717493810&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/pharrell-x-adidas-samba-human-race-aluminium-glory-red-id9066'}
+[2024-10-01T16:18:00.089+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=3> (referer: https://www.kickgame.co.uk/collections/sneakers?page=2)
+[2024-10-01T16:18:00.350+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=3>
+[2024-10-01T16:18:00.350+0000] {subprocess.py:93} INFO - {'name': "Nike Dunk Low Wmns 'Diffused Taupe'", 'price': '£175.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/nike-dunk-low-wmns-diffused-taupe-dd1503-125.png?v=1700675894&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Womens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/nike-dunk-low-wmns-diffused-taupe-dd1503-125'}
+[2024-10-01T16:18:01.345+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=4> (referer: https://www.kickgame.co.uk/collections/sneakers?page=3)
+[2024-10-01T16:18:01.555+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=4>
+[2024-10-01T16:18:01.559+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Mid SE GS 'French Blue'", 'price': '£95.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/air-jordan-1-mid-se-french-blue-light-steel-gs-DR6235-401_1.png?v=1675702404&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-mid-se-gs-french-blue-dr6235-401'}
+[2024-10-01T16:18:02.580+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=5> (referer: https://www.kickgame.co.uk/collections/sneakers?page=4)
+[2024-10-01T16:18:02.768+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=5>
+[2024-10-01T16:18:02.769+0000] {subprocess.py:93} INFO - {'name': 'Air Jordan 1 Mid Smoke Grey Anthracite', 'price': '£175.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/air-jordan-1-mid-light-smoke-grey-554724-078_1.png?v=1643632694&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-mid-light-smoke-grey-anthracite'}
+[2024-10-01T16:18:03.800+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=6> (referer: https://www.kickgame.co.uk/collections/sneakers?page=5)
+[2024-10-01T16:18:04.010+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=6>
+[2024-10-01T16:18:04.010+0000] {subprocess.py:93} INFO - {'name': "Asics Gel 1130 'White Clay Grey'", 'price': '£139.99', 'images': '//www.kickgame.co.uk/cdn/shop/files/1201A256-112.png?v=1727134133&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/asics-asics-gel-1130-white-clay-grey-1201a256-112'}
+[2024-10-01T16:18:05.161+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=7> (referer: https://www.kickgame.co.uk/collections/sneakers?page=6)
+[2024-10-01T16:18:05.330+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=7>
+[2024-10-01T16:18:05.330+0000] {subprocess.py:93} INFO - {'name': 'adidas Yeezy Boost 700 Salt', 'price': '£300.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/Yeezy-Boost-700-EG7487-Salt_1.png?v=1659040459&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/adidas-yeezy-boost-700-salt-eg7487'}
+[2024-10-01T16:18:06.449+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=8> (referer: https://www.kickgame.co.uk/collections/sneakers?page=7)
+[2024-10-01T16:18:06.611+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=8>
+[2024-10-01T16:18:06.611+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Mid PS 'Sonics'", 'price': '£120.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/Air_Jordan_1_Mid_PS_Sonics.png?v=1653050605&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-mid-ps-sonics-640734-371'}
+[2024-10-01T16:18:07.455+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=9> (referer: https://www.kickgame.co.uk/collections/sneakers?page=8)
+[2024-10-01T16:18:07.708+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:07 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=9>
+[2024-10-01T16:18:07.708+0000] {subprocess.py:93} INFO - {'name': "adidas Yeezy Slides 'Resin'", 'price': None, 'images': '//www.kickgame.co.uk/cdn/shop/products/yeezy-slide-resin-FX0494_1.png?v=1658499563&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/yeezy-slides-resin-fx0494'}
+[2024-10-01T16:18:08.837+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=10> (referer: https://www.kickgame.co.uk/collections/sneakers?page=9)
+[2024-10-01T16:18:09.019+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=10>
+[2024-10-01T16:18:09.020+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Retro High OG 'Prototype'", 'price': '£235.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/air-jordan-1-high-og-prototype-DC6515-100_1.png?v=1632730773&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-retro-high-og-prototype-dc6515-100'}
+[2024-10-01T16:18:10.172+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=11> (referer: https://www.kickgame.co.uk/collections/sneakers?page=10)
+[2024-10-01T16:18:10.386+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=11>
+[2024-10-01T16:18:10.386+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Mid GS 'White Shadow'", 'price': '£190.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/jordan-1-mid-gs-white-shadow-554725-073_1.png?v=1658262679&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-mid-gs-white-shadow-554725-073'}
+[2024-10-01T16:18:11.536+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=12> (referer: https://www.kickgame.co.uk/collections/sneakers?page=11)
+[2024-10-01T16:18:11.697+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=12>
+[2024-10-01T16:18:11.698+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Low SE GS 'Knit'", 'price': None, 'images': '//www.kickgame.co.uk/cdn/shop/products/Air_Jordan_1_Low_SE_GS_Knit.png?v=1653049347&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-low-se-gs-knit-dm9037-100'}
+[2024-10-01T16:18:12.688+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=13> (referer: https://www.kickgame.co.uk/collections/sneakers?page=12)
+[2024-10-01T16:18:12.876+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=13>
+[2024-10-01T16:18:12.876+0000] {subprocess.py:93} INFO - {'name': "Air Jordan 1 Low GS 'Light Smoke Grey'", 'price': '£225.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/air-jordan-1-low-gs-553560-030_1.png?v=1659089609&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/air-jordan-1-low-gs-light-smoke-grey-553560-030'}
+[2024-10-01T16:18:14.234+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=14> (referer: https://www.kickgame.co.uk/collections/sneakers?page=13)
+[2024-10-01T16:18:14.400+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:14 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=14>
+[2024-10-01T16:18:14.400+0000] {subprocess.py:93} INFO - {'name': "Nike Dunk Low Disrupt Wmns 'Ivory Black'", 'price': '£290.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/Nike_Dunk_Low_Disrupt_Wmns_Ivory_Black.png?v=1645465773&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Womens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/nike-dunk-low-disrupt-wmns-ivory-black-dd6620-001'}
+[2024-10-01T16:18:15.328+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=15> (referer: https://www.kickgame.co.uk/collections/sneakers?page=14)
+[2024-10-01T16:18:15.640+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:15 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=15>
+[2024-10-01T16:18:15.640+0000] {subprocess.py:93} INFO - {'name': "sacai x Blazer Mid 'White Grey'", 'price': None, 'images': '//www.kickgame.co.uk/cdn/shop/products/nike-blazer-high-sacai-white-grey-BV0072-100_1.png?v=1669286236&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/sacai-x-blazer-mid-white-grey-bv8072-100'}
+[2024-10-01T16:18:16.696+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=16> (referer: https://www.kickgame.co.uk/collections/sneakers?page=15)
+[2024-10-01T16:18:16.902+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:16 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=16>
+[2024-10-01T16:18:16.902+0000] {subprocess.py:93} INFO - {'name': "Supreme x NBA x Air Force 1 Mid 07 'Black'", 'price': '£505.00', 'images': '//www.kickgame.co.uk/cdn/shop/products/Air-Force-1-Mid-07-Supreme-AQ8017-001-black_1.png?v=1661316922&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/supreme-x-air-force-1-mid-07-black-aq8017-001'}
+[2024-10-01T16:18:18.126+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=17> (referer: https://www.kickgame.co.uk/collections/sneakers?page=16)
+[2024-10-01T16:18:18.295+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=17>
+[2024-10-01T16:18:18.295+0000] {subprocess.py:93} INFO - {'name': 'Louis Vuitton Nike Air Force 1 Low By Virgil Abloh White Green', 'price': '£6,999.99', 'images': '//www.kickgame.co.uk/cdn/shop/products/louis-vuitton-nike-air-force-1-low-by-virgil-abloh-white-green_1.png?v=1658230640&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/louis-vuitton-nike-air-force-1-low-by-virgil-abloh-white-green'}
+[2024-10-01T16:18:19.602+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=18> (referer: https://www.kickgame.co.uk/collections/sneakers?page=17)
+[2024-10-01T16:18:19.786+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.kickgame.co.uk/collections/sneakers?page=18>
+[2024-10-01T16:18:19.787+0000] {subprocess.py:93} INFO - {'name': "Adidas Gazelle Indoor 'Cream White Green Gum'", 'price': '£150.00', 'images': '//www.kickgame.co.uk/cdn/shop/files/IH7502.png?v=1719405172&width=1200', 'retailer': 'Kick Game', 'category': 'Footwear', 'gender': 'Mens Footwear', 'url': 'https://www.kickgame.co.uk/collections/sneakers/products/adidas-gazelle-indoor-cream-white-green-gum-ih7502'}
+[2024-10-01T16:18:20.916+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.kickgame.co.uk/collections/sneakers?page=19> (referer: https://www.kickgame.co.uk/collections/sneakers?page=18)
+[2024-10-01T16:18:21.076+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:21 [kickgame] INFO: No products found on page 19. Stopping pagination.
+[2024-10-01T16:18:21.079+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:21 [scrapy.core.engine] INFO: Closing spider (finished)
+[2024-10-01T16:18:21.080+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:21 [scrapy.extensions.feedexport] INFO: Stored csv feed (18 items) in: kickgameraw.csv
+[2024-10-01T16:18:21.085+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:21 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+[2024-10-01T16:18:21.086+0000] {subprocess.py:93} INFO - {'downloader/request_bytes': 15478,
+[2024-10-01T16:18:21.087+0000] {subprocess.py:93} INFO -  'downloader/request_count': 20,
+[2024-10-01T16:18:21.091+0000] {subprocess.py:93} INFO -  'downloader/request_method_count/GET': 20,
+[2024-10-01T16:18:21.092+0000] {subprocess.py:93} INFO -  'downloader/response_bytes': 2708522,
+[2024-10-01T16:18:21.095+0000] {subprocess.py:93} INFO -  'downloader/response_count': 20,
+[2024-10-01T16:18:21.099+0000] {subprocess.py:93} INFO -  'downloader/response_status_count/200': 20,
+[2024-10-01T16:18:21.099+0000] {subprocess.py:93} INFO -  'elapsed_time_seconds': 24.686261,
+[2024-10-01T16:18:21.099+0000] {subprocess.py:93} INFO -  'feedexport/success_count/FileFeedStorage': 1,
+[2024-10-01T16:18:21.099+0000] {subprocess.py:93} INFO -  'finish_reason': 'finished',
+[2024-10-01T16:18:21.099+0000] {subprocess.py:93} INFO -  'finish_time': datetime.datetime(2024, 10, 1, 16, 18, 21, 79558, tzinfo=datetime.timezone.utc),
+[2024-10-01T16:18:21.100+0000] {subprocess.py:93} INFO -  'httpcompression/response_bytes': 27312074,
+[2024-10-01T16:18:21.101+0000] {subprocess.py:93} INFO -  'httpcompression/response_count': 20,
+[2024-10-01T16:18:21.101+0000] {subprocess.py:93} INFO -  'item_scraped_count': 18,
+[2024-10-01T16:18:21.102+0000] {subprocess.py:93} INFO -  'log_count/DEBUG': 39,
+[2024-10-01T16:18:21.102+0000] {subprocess.py:93} INFO -  'log_count/INFO': 12,
+[2024-10-01T16:18:21.102+0000] {subprocess.py:93} INFO -  'memusage/max': 224956416,
+[2024-10-01T16:18:21.102+0000] {subprocess.py:93} INFO -  'memusage/startup': 224956416,
+[2024-10-01T16:18:21.104+0000] {subprocess.py:93} INFO -  'request_depth_max': 18,
+[2024-10-01T16:18:21.105+0000] {subprocess.py:93} INFO -  'response_received_count': 20,
+[2024-10-01T16:18:21.106+0000] {subprocess.py:93} INFO -  'robotstxt/request_count': 1,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'robotstxt/response_count': 1,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'robotstxt/response_status_count/200': 1,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'scheduler/dequeued': 19,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'scheduler/dequeued/memory': 19,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'scheduler/enqueued': 19,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'scheduler/enqueued/memory': 19,
+[2024-10-01T16:18:21.107+0000] {subprocess.py:93} INFO -  'start_time': datetime.datetime(2024, 10, 1, 16, 17, 56, 393297, tzinfo=datetime.timezone.utc)}
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - 2024-10-01 16:18:21 [scrapy.core.engine] INFO: Spider closed (finished)
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=2
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=3
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=4
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=5
+[2024-10-01T16:18:21.108+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=6
+[2024-10-01T16:18:21.109+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=7
+[2024-10-01T16:18:21.109+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=8
+[2024-10-01T16:18:21.109+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=9
+[2024-10-01T16:18:21.109+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=10
+[2024-10-01T16:18:21.110+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=11
+[2024-10-01T16:18:21.110+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=12
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=13
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=14
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=15
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=16
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=17
+[2024-10-01T16:18:21.111+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=18
+[2024-10-01T16:18:21.112+0000] {subprocess.py:93} INFO - Following: https://www.kickgame.co.uk/collections/sneakers?page=19
+[2024-10-01T16:18:21.555+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-10-01T16:18:21.612+0000] {taskinstance.py:1398} INFO - Marking task as SUCCESS. dag_id=etl_jd_pipeline, task_id=kickgame_extraction, execution_date=20241001T161735, start_date=20241001T161753, end_date=20241001T161821
+[2024-10-01T16:18:21.666+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2024-10-01T16:18:21.708+0000] {taskinstance.py:2776} INFO - 1 downstream tasks scheduled from follow-on schedule check

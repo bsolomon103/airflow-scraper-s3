@@ -1,0 +1,4 @@
+Scrapy
+configparser
+pandas
+s3fs
